@@ -1,0 +1,282 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-stand-blog.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+
+    <title>Signup</title>
+    <style>
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  background: black;
+  z-index: -2;
+}
+
+.form {
+  padding: 2rem 3rem;
+  display: grid;
+  place-items: center;
+  gap: 2rem;
+  border: 1px solid transparent;
+  border-image: linear-gradient(transparent, #ffe0a6, transparent) 1;
+  border-width: 0 2px 0 2px;
+  background: radial-gradient(100% 61.73% at 100% 50%, rgba(255, 224, 166, 0.05) 0%, transparent 100%), radial-gradient(91.09% 56.23% at 0% 50%, rgba(255, 224, 166, 0.05) 0%, transparent 100%);
+  position: relative;
+}
+.form .title {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  background: linear-gradient(rgb(170, 170, 170), rgb(78, 78, 78));
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.form .input-container {
+  display: flex;
+  align-items: center;
+  background: radial-gradient(47.3% 73.08% at 50% 94.23%, rgba(255, 255, 255, 0.1) 5%, rgba(0, 0, 0, 0) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem;
+}
+.form .input-container svg {
+  stroke: grey;
+  margin-right: 0.5rem;
+}
+.form .input-container .input {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  color: white;
+  width: 100%;
+}
+.form .input-container .input:focus {
+  outline: none;
+  color: #ffe0a6;
+}
+.form .login-button {
+  width: 100%;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+.form .login-button .input {
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+  background: radial-gradient(100% 45% at 100% 50%, rgba(255, 224, 166, 0.084) 0%, rgba(115, 115, 115, 0) 100%), radial-gradient(100% 45% at 0% 50%, rgba(255, 224, 166, 0.084) 0%, rgba(115, 115, 115, 0) 100%);
+  border: 1px solid #ffe0a6;
+  text-align: center;
+  color: #ffe0a6;
+  font-size: 1rem;
+}
+.form .login-button:hover {
+  transform: scale(1.05);
+}
+.form .login-button:active {
+  transform: scale(0.95);
+}
+.form .para {
+  color: white;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.form .para a {
+  color: #ffe0a6;
+  text-decoration: none;
+}
+.form .para a:hover {
+  text-decoration: underline;
+}
+</style>
+
+{#    <style>#}
+{#        form {#}
+{#            width: 50%;#}
+{#        }#}
+{##}
+{#        h3 {#}
+{#            color: rgb(237, 63, 63);#}
+{#            font-weight: 500;#}
+{#            font-size: 30px;#}
+{#            margin-bottom: 20px;#}
+{#        }#}
+{##}
+{#        .btn {#}
+{#            margin-top: 30px;#}
+{#            background: rgb(236, 88, 88);#}
+{#            width: 100%;#}
+{#            color: #fff;#}
+{#            font-size: 20px;#}
+{#            padding: 10px;#}
+{#        }#}
+{##}
+{#        .btn:hover {#}
+{#            background: transparent;#}
+{#            color: rgb(237, 63, 63);#}
+{#            border: 1px solid rgb(237, 63, 63);#}
+{#        }#}
+{##}
+{#        .para {#}
+{#            padding: 20px;#}
+{#            text-align: center;#}
+{#            font-size: 18px;#}
+{#            color: #555;#}
+{#        }#}
+{##}
+{#        a {#}
+{#            text-decoration: none;#}
+{#            color: #386cbb;#}
+{#        }#}
+{##}
+{#        a:hover {#}
+{#            color: rgb(237, 63, 63);#}
+{#            letter-spacing: 1px;#}
+{#        }#}
+{##}
+{#        @media screen and (max-width:600px) {#}
+{#            form {#}
+{#                width: 100%;#}
+{#            }#}
+{#        }#}
+{#    </style>#}
+</head>
+
+<body>
+
+    {%include 'header.html'%}
+    <div class="wrapper">
+  <form class="form" action="{% url 'signup' %}" method="post">
+    {% csrf_token %}
+    <span class="title">Signup</span>
+
+    {% for message in messages %}
+    <p class="text-danger text-center">{{message}}</p>
+    {% endfor %}
+
+    <div class="input-container">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="url(#gradient-stroke)" fill="none" stroke-width="1">
+          <path d="M21.6365 5H3L12.2275 12.3636L21.6365 5Z"></path>
+        </g>
+      </svg>
+      <input class="input" type="text" placeholder="Username" name="username" required />
+    </div>
+
+    <div class="input-container">
+      <input class="input" type="email" placeholder="Email" name="email" required />
+    </div>
+
+    <div class="input-container">
+      <input class="input" type="password" placeholder="Password" name="password" required />
+    </div>
+
+    <div class="input-container">
+      <input class="input" type="password" placeholder="Confirm Password" name="password2" required />
+    </div>
+
+    <div class="login-button">
+      <input class="input" type="submit" value="Signup" />
+    </div>
+
+    <p class="para">Have an account? <a href="{% url 'signin' %}">Login</a></p>
+    <div class="texture"></div>
+  </form>
+</div>
+
+
+{#    <div class="container">#}
+{#        <div class="d-flex justify-content-center align-items-center " style="height: 100vh;">#}
+{##}
+{#            <form action="{% url 'signup' %}" class="p-5 shadow" method="post">#}
+{#                {% csrf_token %}#}
+{#                <h3>SIGNUP</h3>#}
+{#                <br>#}
+{#                {% for message in messages %}#}
+{#                <p class="text-danger text-center">{{message}}</p>#}
+{#                {% endfor %}#}
+{#                <label for="" class="form-label">Username</label>#}
+{#                <div class="input-group mt-1">#}
+{#                    <span class="input-group-text">@</span>#}
+{#                    <input type="text" class="form-control" name="username" required>#}
+{#                </div>#}
+{#                <label for="" class="form-label mt-3">Email</label>#}
+{#                <input type="email" class="form-control" name="email" required>#}
+{#                <label for="" class="form-label mt-3">Password</label>#}
+{#                <input type="password" class="form-control" name="password" required>#}
+{#                <label for="" class="form-label mt-3">Confirm Password</label>#}
+{#                <input type="password" class="form-control" name="password2" required>#}
+{#                <button class="btn">Signup</button>#}
+{#                <p class="para">Have an account ?#}
+{#                    <a href="{% url 'signin' %}"> Login</a>#}
+{#                </p>#}
+{##}
+{##}
+{#            </form>#}
+{##}
+{#        </div>#}
+{#    </div>#}
+
+    {% include 'footer.html' %}
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+        crossorigin="anonymous"></script>
+
+    <!-- Additional Scripts -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="{% static 'assets/js/owl.js' %}"></script>
+    <script src="{% static 'assets/js/slick.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.js' %}"></script>
+    <script src="{% static 'assets/js/accordions.js' %}"></script>
+
+
+    <script language="text/Javascript">
+        cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+        function clearField(t) {                   //declaring the array outside of the
+            if (!cleared[t.id]) {                      // function makes it static and global
+                cleared[t.id] = 1;  // you could use true and false, but that's more typing
+                t.value = '';         // with more chance of typos
+                t.style.color = '#fff';
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
